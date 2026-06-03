@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router";
-import CommentSection from "../components/Comments/CommentSection";
+import CommentSection from "../components/comments/CommentSection";
 
 const PostDetailsPage = () => {
   const { id } = useParams();
