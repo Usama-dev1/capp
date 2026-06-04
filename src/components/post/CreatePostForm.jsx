@@ -1,22 +1,26 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { useAuth } from "../../hooks/useAuth";
 import useFetchData from "../../hooks/useFetchData";
 import { useNavigate } from "react-router";
 
 const CreatePostForm = () => {
+  const { session } = useAuth(); // ✅ Get logged-in user
   const { addPost } = useFetchData();
   const [newTitle, setNewTitle] = useState("");
   const [newPost, setNewPost] = useState("");
   const navigate = useNavigate();
+
   const handleSubmitPost = (e) => {
     e.preventDefault();
     if (!newPost.trim() || !newTitle.trim()) return;
 
     addPost({
       id: uuid(),
-      userId: uuid(),
+      userId: session?.id,
       title: newTitle.trim(),
       body: newPost.trim(),
+      createdAt: new Date().toISOString(),
     });
 
     setNewTitle("");

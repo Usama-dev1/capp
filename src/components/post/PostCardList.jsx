@@ -1,5 +1,5 @@
-import useFetchData from "../hooks/useFetchData";
-import Loader from "./Loader";
+import useFetchData from "../../hooks/useFetchData";
+import Loader from "../Loader";
 import PostCard from "./PostCard";
 
 const PostCardList = () => {

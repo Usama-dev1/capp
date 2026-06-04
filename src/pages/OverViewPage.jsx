@@ -1,6 +1,10 @@
+import { useAuth } from "../hooks/useAuth";
+import useFetchComments from "../hooks/useFetchComments";
 import useFetchData from "../hooks/useFetchData";
 const OverViewPage = () => {
   const { data } = useFetchData();
+  const { session } = useAuth();
+  const userPosts = data.filter((d) => d.userId === session.id);
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6">
@@ -11,12 +15,18 @@ const OverViewPage = () => {
         </p>
       </header>
 
-      <div className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-3xl bg-white p-5 shadow-sm border border-gray-100">
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="rounded-3xl bg-white p-5 shadow-sm border border-gray-100 text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
             Total posts
           </p>
           <p className="mt-4 text-3xl font-semibold">{data.length}</p>
+        </div>
+        <div className="rounded-3xl bg-white p-5 shadow-sm border border-gray-100 text-center">
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-400">
+            My posts
+          </p>
+          <p className="mt-4 text-3xl font-semibold">{userPosts.length}</p>
         </div>
       </div>
 

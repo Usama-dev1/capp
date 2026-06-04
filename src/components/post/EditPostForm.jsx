@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { v4 as uuid } from "uuid";
-import { useParams, useNavigate } from "react-router"; // Added useNavigate
-
+import { useParams, useNavigate } from "react-router";
+import { useAuth } from "../../hooks/useAuth";
 import useFetchData from "../../hooks/useFetchData";
 
 const EditPostForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { session } = useAuth();
   const { updatePost } = useFetchData();
 
   const getPosts = localStorage.getItem("data");
@@ -32,17 +32,38 @@ const EditPostForm = () => {
     );
   }
 
+  // if logged-in userId matches postId
+  if (session?.id !== post.userId) {
+    return (
+      <div className="p-6 max-w-2xl mx-auto text-center">
+        <p className="text-red-500 font-medium mb-4">
+          You can only edit your own posts!
+        </p>
+        <button
+          onClick={() => navigate("/dashboard/posts")}
+          className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition"
+        >
+          Back to Posts
+        </button>
+      </div>
+    );
+  }
+
   const handleSubmitPost = (e) => {
     e.preventDefault();
 
     if (!newPost.trim() || !newTitle.trim()) return;
 
-    updatePost({
-      id,
-      userId: post?.userId || uuid(),
-      title: newTitle.trim(),
-      body: newPost.trim(),
-    });
+    updatePost(
+      post.id,
+      {
+        id,
+        userId: post?.userId,
+        title: newTitle.trim(),
+        body: newPost.trim(),
+      },
+      session.id,
+    );
     navigate("/dashboard/posts");
   };
 

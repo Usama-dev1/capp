@@ -1,9 +1,8 @@
 import { Link } from "react-router";
-import PostCardList from "../components/post/PostCardList";
 import { useAuth } from "../hooks/useAuth";
 import PostByUser from "../components/post/PostsByUser";
 
-const PostListPage = () => {
+const PostByUserPage = () => {
   const { session } = useAuth();
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-sm">
@@ -26,9 +25,9 @@ const PostListPage = () => {
           </Link>
         )}
       </div>
-      <PostCardList />
+      <PostByUser />
     </div>
   );
 };
 
-export default PostListPage;
+export default PostByUserPage;
