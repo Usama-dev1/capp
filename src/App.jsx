@@ -29,7 +29,10 @@ const App = () => {
             <Route path="dashboard/edit-post/:id" element={<EditPostPage />} />
             <Route path="dashboard/posts" element={<PostByUserPage />} />
             <Route path="dashboard/posts-all" element={<PostListPage />} />
-            <Route path="dashboard/posts/:id" element={<PostDetailsPage />} />
+            <Route
+              path="dashboard/posts-all/:id"
+              element={<PostDetailsPage />}
+            />
           </Route>
         </Route>
 
