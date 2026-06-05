@@ -11,15 +11,19 @@ import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PostByUserPage from "./pages/PostByUserPage";
+import HomePageLayout from "./pages/layouts/HomePageLayout";
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* public routes */}
-        <Route index element={<HomePage />} />
-        <Route path="/:id" element={<PostDetailsPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+        <Route element={<HomePageLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/:id" element={<PostDetailsPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
 
         {/* protected routes */}
         <Route element={<ProtectedRoute />}>
@@ -37,7 +41,6 @@ const App = () => {
         </Route>
 
         {/*not found */}
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900 text-slate-100 border-b border-slate-800 backdrop-blur-md bg-opacity-95 px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-blue-muted border-b border-slate-800 px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center mb-2">
       {/* Brand Logo */}
       <div className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 font-extrabold tracking-wider">
         <NavLink to="/">Blog</NavLink>

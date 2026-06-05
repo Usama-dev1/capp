@@ -28,64 +28,61 @@ const LoginForm = () => {
   if (loading) return <Loader />;
   if (session) return navigate("/dashboard");
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-4">
-        {/* Form Container */}
-        <form
-          onSubmit={handleSubmit}
-          className="w-full max-w-sm bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4"
-        >
-          <h2 className="text-xl font-semibold text-gray-800 text-center mb-2">
-            Login
-          </h2>
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-4">
+      {/* Form Container */}
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-sm bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4"
+      >
+        <h2 className="text-xl font-semibold text-gray-800 text-center mb-2">
+          Login
+        </h2>
 
-          {/*Error Message */}
-          {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-700">{error}</p>
-            </div>
-          )}
-
-          {/* Email Input */}
-          <div className="space-y-1">
-            <label className="text-xs font-medium text-gray-600 block">
-              Email
-            </label>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
-              placeholder="you@example.com"
-            />
+        {/*Error Message */}
+        {error && (
+          <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+            <p className="text-sm text-red-700">{error}</p>
           </div>
+        )}
 
-          {/* Password Input */}
-          <div className="space-y-1">
-            <label className="text-xs font-medium text-gray-600 block">
-              Password
-            </label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
-              placeholder="••••••••"
-            />
-          </div>
+        {/* Email Input */}
+        <div className="space-y-1">
+          <label className="text-xs font-medium text-gray-600 block">
+            Email
+          </label>
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
+            placeholder="you@example.com"
+          />
+        </div>
 
-          {/* Submit Button */}
-          <div className="w-full flex justify-center">
-            <button type="submit" className="btn-primary btn-lg">
-              Sign In
-            </button>
-          </div>
-        </form>
-      </div>
-    </>
+        {/* Password Input */}
+        <div className="space-y-1">
+          <label className="text-xs font-medium text-gray-600 block">
+            Password
+          </label>
+          <input
+            type="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-indigo-500"
+            placeholder="••••••••"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <div className="w-full flex justify-center">
+          <button type="submit" className="btn-primary btn-lg">
+            Sign In
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
