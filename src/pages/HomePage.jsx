@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import PostCardList from "../components/post/PostCardList";
 
 const PostListPage = () => {
