@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import PostCardList from "../components/post/PostCardList";
 import { useAuth } from "../hooks/useAuth";
-import PostByUser from "../components/post/PostsByUser";
 
 const PostListPage = () => {
   const { session } = useAuth();
