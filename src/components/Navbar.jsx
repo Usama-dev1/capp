@@ -26,16 +26,10 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-4">
         {!session ? (
           <div className="flex space-x-4">
-            <NavLink
-              to="/login"
-              className="text-sm font-medium text-slate-300 hover:text-white px-4 py-2 rounded-xl transition-all duration-200"
-            >
+            <NavLink to="/login" className="btn-ghost">
               Login
             </NavLink>
-            <NavLink
-              to="/register"
-              className="text-sm font-medium bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl shadow-lg shadow-blue-600/20 transition-all duration-200"
-            >
+            <NavLink to="/register" className="btn-primary btn-lg">
               Register
             </NavLink>
           </div>
@@ -47,10 +41,7 @@ const Navbar = () => {
             >
               Go to Dashboard
             </NavLink>
-            <button
-              onClick={handleLogout}
-              className="rounded-xl py-2 px-4 bg-rose-600/10 hover:bg-rose-600 text-sm font-medium text-rose-400 hover:text-white transition-all duration-200"
-            >
+            <button onClick={handleLogout} className="btn-ghost btn-lg">
               Logout
             </button>
           </>
@@ -105,10 +96,7 @@ const Navbar = () => {
                 >
                   Go to Dashboard
                 </NavLink>
-                <button
-                  onClick={handleLogout}
-                  className="w-30 rounded-xl py-2 bg-rose-600/10 hover:bg-rose-600 text-xs font-medium text-rose-400 hover:text-white transition-all duration-200 flex items-center justify-center gap-2"
-                >
+                <button onClick={handleLogout} className="btn-ghost btn-lg">
                   Logout
                 </button>
               </>

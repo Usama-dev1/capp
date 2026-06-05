@@ -79,10 +79,7 @@ const LoginForm = () => {
 
           {/* Submit Button */}
           <div className="w-full flex justify-center">
-            <button
-              type="submit"
-              className="w-40 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-lg transition-colors pt-2"
-            >
+            <button type="submit" className="btn-primary btn-lg">
               Sign In
             </button>
           </div>

@@ -18,10 +18,7 @@ const PostByUser = () => {
             Get started by creating your first post.
           </p>
           <div className="w-full flex justify-center mt-8">
-            <Link
-              to="/dashboard/create-post"
-              className=" w-40 text-center bg-purple-500 hover:bg-purple-800 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors duration-200 shadow-sm shadow-indigo-100 flex justify-center items-center gap-1.5"
-            >
+            <Link to="/dashboard/create-post" className="btn-secondary">
               Create a Post
             </Link>
           </div>

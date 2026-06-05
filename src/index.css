@@ -1,1 +1,75 @@
 @import "tailwindcss";
+@tailwind utilities;
+/* =========================
+   2. DESIGN TOKENS (BLUE CONTRAST)
+========================= */
+:root {
+  --blue-bg: #0f172a; /* Deep slate/blue background */
+  --blue-fg: #f8fafc; /* Crisp off-white text */
+  --blue-primary: #3b82f6; /* High-contrast Vivid Blue */
+  --blue-accent: #60a5fa; /* Light Accent Blue */
+  --blue-muted: #1e293b; /* Deep blue-gray for containers/cards */
+  --blue-border: #334155; /* Subtle contrast border */
+}
+
+/* =========================
+   3. Update Tailwind TOKENS (BLUE CONTRAST)
+========================= */
+
+@theme inline {
+  --color-blue-bg: var(--blue-bg);
+  --color-blue-fg: var(--blue-fg);
+  --color-blue-primary: var(--blue-primary);
+  --color-blue-accent: var(--blue-accent);
+  --color-blue-muted: var(--blue-muted);
+  --color-blue-border: var(--blue-border);
+}
+
+/* =========================
+   4.SEMANTIC BUTTON UTILITIES
+========================= */
+
+/* Primary: One per screen. High visual weight. */
+@utility btn-primary {
+  @apply bg-blue-primary hover:bg-blue-primary/80 
+         text-white font-semibold px-5 py-2.5 
+         rounded-lg transition duration-150 ease-in-out 
+         shadow-md;
+}
+
+/* Secondary: Supporting actions. Medium weight. */
+@utility btn-secondary {
+  @apply bg-blue-muted text-blue-fg border border-blue-border 
+         hover:border-blue-accent font-medium px-5 py-2.5 
+         rounded-lg transition duration-150 ease-in-out;
+}
+
+/* Destructive: Delete actions. Red signals danger. */
+@utility btn-destructive {
+  @apply bg-red-600 hover:bg-red-700 
+         text-white font-semibold px-5 py-2.5 
+         rounded-lg transition duration-150 ease-in-out;
+}
+
+/* Ghost: Low-priority. Logout, cancel, edit links. */
+@utility btn-ghost {
+  @apply bg-transparent text-blue-accent 
+         hover:text-white hover:bg-blue-muted 
+         font-medium px-4 py-2 
+         rounded-lg transition duration-150 ease-in-out;
+}
+
+/* Small: for inline/card/comment actions */
+@utility btn-sm {
+  @apply px-3 py-1.5 text-xs rounded-md;
+}
+
+/* Large: for hero CTAs like Login, Register, Publish */
+@utility btn-lg {
+  @apply px-6 py-3 text-base rounded-xl;
+}
+
+/* Icon only: trash/edit icon buttons */
+@utility btn-icon {
+  @apply p-2 rounded-md;
+}

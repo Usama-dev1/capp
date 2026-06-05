@@ -12,19 +12,16 @@ const DashSidebar = () => {
   ];
 
   return (
-    <aside className="w-full h-screen bg-slate-900 text-slate-100 p-6 flex flex-col justify-between items-center border-r border-slate-800">
+    <aside className="w-full h-screen bg-slate-900 text-slate-100 p-2 flex flex-col justify-between items-center border-r border-slate-800">
       {/* Top Section: Brand & Navigation */}
-      <div className="flex flex-col items-center justify-center gap-8">
+      <div className="flex flex-col items-center justify-center gap-4">
         <div className="text-lg font-bold  text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
           My Dashboard
         </div>
 
-        <nav className="flex flex-col gap-1.5">
-          <div>
-            <NavLink
-              to={"/dashboard/create-post"}
-              className="w-full rounded-xl py-2 px-4 bg-green-600/80 hover:bg-green-600 text-sm font-medium text-white hover:text-white/50 transition-all duration-200 flex items-center justify-center"
-            >
+        <nav className="w-full flex flex-col gap-1.5">
+          <div className="my-4">
+            <NavLink to={"/dashboard/create-post"} className="btn-primary">
               Create Post
             </NavLink>
           </div>
@@ -36,7 +33,7 @@ const DashSidebar = () => {
               className={({ isActive }) =>
                 `px-4 py-1 rounded-md transition-all duration-200 text-sm font-medium ${
                   isActive
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                    ? "bg-blue-border text-white shadow-lg shadow-blue-600/20"
                     : "text-slate-400 hover:bg-slate-800 hover:text-slate-100"
                 }`
               }
@@ -47,13 +44,13 @@ const DashSidebar = () => {
         </nav>
       </div>
 
-      <div className="w-full border-t border-slate-800 pt-6 flex flex-col gap-3">
+      <div>
         <button
           onClick={() => {
             logout();
             navigate("/");
           }}
-          className="w-full rounded-xl py-2 bg-rose-600/10 hover:bg-rose-600 text-sm font-medium text-rose-400 hover:text-white transition-all duration-200 flex items-center justify-center gap-2"
+          className="btn-destructive btn-sm"
         >
           Logout
         </button>

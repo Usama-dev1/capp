@@ -78,13 +78,13 @@ const CommentsList = ({ comments, session, deleteComment, updateComment }) => {
                         setEditingId(comment.id);
                         setEditingBody(comment.body || "");
                       }}
-                      className="text-xs font-medium text-indigo-600 hover:text-indigo-800 transition"
+                      className="btn-secondary btn-sm hover:bg-blue-muted/60"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => deleteComment(comment.id, session?.id)}
-                      className="text-xs font-medium text-red-500 hover:text-red-700 transition opacity-80 group-hover:opacity-100"
+                      className="btn-destructive btn-sm"
                     >
                       Delete
                     </button>

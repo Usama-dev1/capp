@@ -74,7 +74,7 @@ const CreatePostForm = () => {
           <button
             type="submit"
             disabled={!newTitle.trim() || !newPost.trim()}
-            className="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition shadow-sm"
+            className="btn-secondary btn-lg  hover:bg-blue-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition shadow-sm"
           >
             Publish Post
           </button>

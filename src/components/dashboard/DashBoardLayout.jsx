@@ -10,7 +10,7 @@ const DashBoardLayout = () => {
       </aside>
 
       {/* 3. Main Content Area - Grows to fill the remaining space */}
-      <main className="flex-1 h-full overflow-y-auto p-6">
+      <main className="flex-1 h-full overflow-y-auto p-2">
         <Outlet />
       </main>
     </div>

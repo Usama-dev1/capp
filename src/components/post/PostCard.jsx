@@ -34,13 +34,13 @@ const PostCard = ({ post, index, deletePost }) => {
         <div className="flex md:flex-col lg:flex-row gap-2 justify-end pt-3 md:pt-0 border-t md:border-t-0 border-gray-50">
           <button
             onClick={() => navigate(`/dashboard/edit-post/${post?.id}`)}
-            className="flex-1 md:w-24 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-700 text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1"
+            className="btn-secondary btn-sm hover:bg-blue-muted/80"
           >
             Edit
           </button>
           <button
             onClick={() => deletePost(post?.id, session?.id)}
-            className="flex-1 md:w-24 px-3 py-1.5 bg-red-50 hover:bg-red-100 border border-red-100 text-red-600 text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1"
+            className="btn-destructive btn-sm"
           >
             Delete
           </button>

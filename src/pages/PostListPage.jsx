@@ -20,7 +20,7 @@ const PostListPage = () => {
         {session && (
           <Link
             to="/dashboard/create-post"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors duration-200 shadow-sm shadow-indigo-100 flex items-center gap-1.5"
+            className="btn-secondary btn-lg hover:bg-blue-muted/80"
           >
             + Add Post
           </Link>

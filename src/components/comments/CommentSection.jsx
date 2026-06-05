@@ -41,7 +41,7 @@ const CommentSection = () => {
               href="/login"
               className="font-bold text-blue-600 hover:underline"
             >
-              login
+              <span className="mx-1 btn-secondary btn-sm">login</span>
             </a>
             to comment.
           </p>
