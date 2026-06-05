@@ -7,7 +7,7 @@ const DashBoardLayout = () => {
       <div className="sm:hidden">
         <DashBoardNav />
       </div>
-      <div className="w-full h-screen mx-auto max-w-6xl flex">
+      <div className="w-full h-screen mx-auto flex">
         {/* 2. Sidebar - Fixed width (e.g., 1/4 or 1/3) */}
         <aside className="hidden sm:flex w-50 h-full bg-gray-100">
           <DashSidebar />
