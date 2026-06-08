@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// module-level plain object — not a hook, survives remounts
+//object to store the last fetch comment id
 const lastComm = { current: null };
 
 const useFetchComments = (postId) => {
