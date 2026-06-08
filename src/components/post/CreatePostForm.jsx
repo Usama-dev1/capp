@@ -5,7 +5,7 @@ import useFetchData from "../../hooks/useFetchData";
 import { useNavigate } from "react-router";
 
 const CreatePostForm = () => {
-  const { session } = useAuth(); // ✅ Get logged-in user
+  const { session } = useAuth(); 
   const { addPost } = useFetchData();
   const [newTitle, setNewTitle] = useState("");
   const [newPost, setNewPost] = useState("");
