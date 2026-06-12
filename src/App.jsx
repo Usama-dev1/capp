@@ -32,6 +32,10 @@ const App = () => {
             <Route path="dashboard/create-post" element={<CreatePostPage />} />
             <Route path="dashboard/edit-post/:id" element={<EditPostPage />} />
             <Route path="dashboard/posts" element={<PostByUserPage />} />
+            <Route
+              path="dashboard/posts/:id"
+              element={<PostDetailsPage />}
+            />
             <Route path="dashboard/posts-all" element={<PostListPage />} />
             <Route
               path="dashboard/posts-all/:id"
